@@ -41,6 +41,7 @@ To resolve this issue, **pseudo.js** parses the CSS stylesheet of the document a
 ```
 Now, you can reach pseudoelements via following selectors:
 
+
 | Pseudoelement | Selector |
 |--|--|
 |  `'div::before'` | `'div > .before'` |
