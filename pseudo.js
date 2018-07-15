@@ -112,7 +112,7 @@ window.pseudo = (function() {
     }
 
     function injectCSS(rule) {
-        if (sheet.styleSheet) shet.styleSheet.cssText = rule; // Support for IE
+        if (sheet.styleSheet) sheet.styleSheet.cssText = rule; // Support for IE
         else sheet.appendChild(document.createTextNode(rule)); // Support for the rest
     }
 
