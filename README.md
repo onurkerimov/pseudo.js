@@ -1,6 +1,6 @@
 # pseudo.js
 
-**pseudo.js** is a plugin that lets you convert `::before` and `::after` pseudo elements to real elements. This way, they become reachable with JavaScript.
+**pseudo.js** is a ponyfill-like plugin that lets you convert `::before` and `::after` pseudo elements into real elements. By this plugin, you can support pseudoelements for non-supporting browsers such as IE11. This way, they also become reachable by selectors JavaScript.
 
 ## Problem with Pseudo Elements
 Let's say you have a document with following CSS and HTML:
@@ -10,18 +10,18 @@ span::before, span::after{ background: blue; }
 ```
 ```html
 <div>
-    <span>John Doe</span>
+  <span>John Doe</span>
 </div>
 ```
-`::before` and `::after` selectors in above CSS, result in the following HTML:
+`::before` and `::after` selectors roughly results in the following HTML:
 ```html
 <div>
-    <::before>Name: </::before>
-    <span>
-        <::before/>
-        John Doe
-        <::after/>
-    </span>
+  <::before>Name: </::before>
+  <span>
+    <::before/>
+      John Doe
+    <::after/>
+  </span>
 </div>
 ```
 However, these pseudoelements are not reachable with JavaScript. While you can reach `div` element via `document.querySelector('div')`, you **cannot** reach `div::before` element via `document.querySelector('div::before')`.
